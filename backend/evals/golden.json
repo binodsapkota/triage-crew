@@ -1,0 +1,102 @@
+[
+  {
+    "id": "late-order",
+    "message": "Where is my order 1042? It was supposed to arrive last week.",
+    "expected_agents": ["order_agent", "knowledge_agent"],
+    "must_mention": ["#1042", "shipping.md"]
+  },
+  {
+    "id": "late-order-tracking",
+    "message": "Can you track order 1043 for me?",
+    "expected_agents": ["order_agent", "knowledge_agent"],
+    "must_mention": ["#1043", "USPS"]
+  },
+  {
+    "id": "processing-order",
+    "message": "Has order 1044 shipped yet?",
+    "expected_agents": ["order_agent", "knowledge_agent"],
+    "must_mention": ["#1044"]
+  },
+  {
+    "id": "refund-fit",
+    "message": "I want a refund for order 1045, the rain jacket doesn't fit.",
+    "expected_agents": ["order_agent", "knowledge_agent"],
+    "must_mention": ["#1045", "returns-refunds.md"]
+  },
+  {
+    "id": "return-window",
+    "message": "How many days do I have to return something?",
+    "expected_agents": ["knowledge_agent"],
+    "must_mention": ["30 days"]
+  },
+  {
+    "id": "damaged-with-ticket",
+    "message": "Order 1047 arrived damaged, one tent pole is snapped. Please open a ticket.",
+    "expected_agents": ["order_agent", "knowledge_agent", "ticket_agent"],
+    "expect_ticket": true,
+    "must_mention": ["T-10", "damaged-items.md"]
+  },
+  {
+    "id": "damaged-no-ticket-request",
+    "message": "My order 1047 arrived damaged.",
+    "expected_agents": ["order_agent", "knowledge_agent", "ticket_agent"],
+    "expect_ticket": true,
+    "must_mention": ["T-10"]
+  },
+  {
+    "id": "boots-warranty",
+    "message": "What's your warranty on hiking boots?",
+    "expected_agents": ["knowledge_agent"],
+    "must_mention": ["2 year", "warranty.md"]
+  },
+  {
+    "id": "tent-warranty",
+    "message": "Do you cover broken tent poles under warranty?",
+    "expected_agents": ["knowledge_agent"],
+    "must_mention": ["lifetime"]
+  },
+  {
+    "id": "headlamp-defect",
+    "message": "My headlamp from order 1040 won't charge anymore.",
+    "expected_agents": ["order_agent", "knowledge_agent", "ticket_agent"],
+    "expect_ticket": true,
+    "must_mention": ["#1040", "T-10"]
+  },
+  {
+    "id": "loyalty",
+    "message": "What does the gold tier policy include?",
+    "expected_agents": ["knowledge_agent"],
+    "must_mention": ["loyalty-tiers.md"]
+  },
+  {
+    "id": "account-lookup",
+    "message": "Can you list the recent orders for C-101?",
+    "expected_agents": ["order_agent"],
+    "must_mention": ["#1042"]
+  },
+  {
+    "id": "escalation",
+    "message": "I need to escalate order 1043, please open a case.",
+    "expected_agents": ["order_agent", "ticket_agent"],
+    "expect_ticket": true,
+    "must_mention": ["T-10"]
+  },
+  {
+    "id": "unknown-order",
+    "message": "Where is order 1099?",
+    "expected_agents": ["order_agent", "knowledge_agent"],
+    "must_mention": ["?"]
+  },
+  {
+    "id": "ambiguous-broken",
+    "message": "It stopped working again and honestly I'm done with this.",
+    "expected_agents": ["order_agent", "knowledge_agent"],
+    "must_mention": ["order number"]
+  },
+  {
+    "id": "ambiguous-vague",
+    "message": "This is ridiculous.",
+    "expected_agents": [],
+    "must_mention": ["?"]
+  }
+]
